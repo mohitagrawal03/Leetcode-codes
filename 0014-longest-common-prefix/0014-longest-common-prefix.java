@@ -17,16 +17,15 @@ class Solution {
         
         // Compare each character of the shortest string with all other strings
         for (int i = 0; i < minString.length(); i++) {
-            char currentChar = minString.charAt(i);
             boolean same = true;
             for (int j = 0; j < strs.length; j++) {
-                if (strs[j].charAt(i) != currentChar) {
+                if (strs[j].charAt(i) != minString.charAt(i)) {
                     same = false;
                     break;
                 }
             }
             if (same) {
-                commonPrefix.append(currentChar);
+                commonPrefix.append(minString.charAt(i));
             } else {
                 break;
             }
