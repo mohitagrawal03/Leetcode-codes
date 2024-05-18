@@ -27,5 +27,6 @@ class Solution {
         inorderTraversalHelper(root.left, a);
         a.add(root.val);
         inorderTraversalHelper(root.right, a);
+        return;
     }
 }
