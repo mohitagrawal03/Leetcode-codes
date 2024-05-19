@@ -24,7 +24,7 @@ class Solution {
             int levelSize = q.size(); // fixed size of current level
             List<Integer> tempList = new ArrayList<>();
             for(int i = 0; i < levelSize; i++){
-                // r, p, a
+                // r(repeat), p(print) or Add in List, a (add i.e. add in queue)
                 TreeNode temp = q.remove();
                 tempList.add(temp.val);
                 if(temp.left != null) q.add(temp.left);
