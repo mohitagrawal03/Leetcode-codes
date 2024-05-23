@@ -11,6 +11,8 @@ class Solution {
         
 //         return Math.min(dp[0], dp[1]);
         
+        // Space Optimization from O(n) to O(1)
+        
         int twoAhead = cost[cost.length-1];
         int oneAhead = cost[cost.length-2];
         int curr;
