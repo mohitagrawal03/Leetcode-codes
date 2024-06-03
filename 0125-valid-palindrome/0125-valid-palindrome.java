@@ -1,21 +1,16 @@
 class Solution {
     public boolean isPalindrome(String s) {
-        // Convert the string to lower case
         s = s.toLowerCase();
-
-        // Use StringBuilder to create a new string with only alphanumeric characters
+        
         StringBuilder ns = new StringBuilder();
         for (int i = 0; i < s.length(); i++) {
-            char ch = s.charAt(i);
-            if (Character.isLetterOrDigit(ch)) {
-                ns.append(ch);
+            if (Character.isLetterOrDigit(s.charAt(i))) {
+                ns.append(s.charAt(i));
             }
         }
-
-        // Check if the cleaned string is a palindrome
-        int len = ns.length();
-        for (int j = 0; j < len / 2; j++) {
-            if (ns.charAt(j) != ns.charAt(len - 1 - j)) {
+        
+        for (int i = 0; i < ns.length() / 2; i++) {
+            if (ns.charAt(i) != ns.charAt(ns.length() - 1 - i)) {
                 return false;
             }
         }
