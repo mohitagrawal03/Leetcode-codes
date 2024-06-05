@@ -1,4 +1,6 @@
 class Solution {
+    
+    // Very Unefficient but works
 //     public boolean check(int[] nums) {
 //         int[] rot_nums = new int[nums.length];
 //         for(int x = 0; x < nums.length; x++){
@@ -22,16 +24,19 @@ class Solution {
 //         return false;
 //     }
     
-    public boolean check(int[] A) {
-        int k = 0, n = A.length;
-        for (int i = 0; i < n; ++i) {
-            if (A[i] > A[(i + 1)%n]) {
-                k++;
-            }
-            if (k > 1) {
-                return false;
+    public boolean check(int[] nums){
+        int count = 0;
+        
+        for(int i = 0; i < nums.length; i++){
+            if(nums[i] > nums[(i+1) % nums.length]){
+                count ++;
+                
+                if(count > 1){
+                    return false;
+                }
             }
         }
         return true;
     }
+     
 }
