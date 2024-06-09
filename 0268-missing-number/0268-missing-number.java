@@ -1,7 +1,7 @@
 class Solution {
     public int missingNumber(int[] nums) {
-        int n = nums.length;
-        int s = (n*(n+1))/2;
+        //int n = nums.length;
+        int s = (nums.length*(nums.length+1))/2;
         int sDash = 0;
         for(int i = 0; i < nums.length; i++){
             sDash += nums[i];
