@@ -5,7 +5,6 @@ class Solution {
                 return num.substring(0, i+1);
             }
         }
-        
         return "";
     } 
 }
