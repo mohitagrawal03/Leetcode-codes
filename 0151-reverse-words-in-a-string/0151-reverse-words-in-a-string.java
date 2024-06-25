@@ -1,5 +1,7 @@
 class Solution {
     public String reverseWords(String s) {
+        
+        // Brute Force
         // String[] arr = s.trim().split("\\s+");
         // StringBuilder sb = new StringBuilder();
         // for (int i = arr.length-1; i > 0; i--) {
@@ -8,6 +10,7 @@ class Solution {
         // sb.append(arr[0]);
         // return sb.toString();
         
+        // Optimised Approach
         int i = s.length()-1, j = s.length()-1;
         StringBuilder sb = new StringBuilder();
         while (i >= 0) {
