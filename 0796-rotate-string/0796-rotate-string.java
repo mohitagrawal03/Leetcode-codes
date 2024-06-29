@@ -1,4 +1,5 @@
-// class Solution {
+// Incorrect code, approah can be right don't knw but not efficient
+// class Solution { 
 //     public boolean rotateString(String s, String goal) {
 //         if (s == goal) {
 //             return true;
