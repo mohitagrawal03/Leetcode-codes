@@ -6,14 +6,8 @@ class Solution {
         for (int i = 0; i < s.length(); i++) {
             sc = s.charAt(i); 
             tc = t.charAt(i);
-            if (hmST.containsKey(sc)) {
-                if (hmST.get(sc) != tc) {
+            if ((hmST.containsKey(sc) && hmST.get(sc) != tc) || (hmTS.containsKey(tc) && hmTS.get(tc) != sc)) {
                     return false;
-                }
-            } if (hmTS.containsKey(tc)) {
-                if (hmTS.get(tc) != sc) {
-                    return false;
-                }
             } else {
                 hmST.put(sc, tc);
                 hmTS.put(tc, sc);
