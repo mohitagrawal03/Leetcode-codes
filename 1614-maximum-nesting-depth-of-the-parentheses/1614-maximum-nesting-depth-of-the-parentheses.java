@@ -15,7 +15,7 @@
 class Solution {
     public int maxDepth(String s) {
         int opened = 0, max = 0;
-        for (char c : s.toCharArray()) {
+        for (char c : s.toCharArray()) { // This is more efficient
             if (c == '(') {
                 // opened++;
                 // if (max < opened)
