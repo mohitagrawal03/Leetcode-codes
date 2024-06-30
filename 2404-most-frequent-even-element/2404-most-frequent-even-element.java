@@ -6,7 +6,10 @@ class Solution {
         for (int i = 0; i < nums.length; i++) {
             if (nums[i] % 2 == 0) {
                 hm.put(nums[i], hm.getOrDefault(nums[i], 0)+1);
-                if (hm.get(nums[i]) > max || (hm.get(nums[i]) == max && nums[i] < ans)) {
+                if (hm.get(nums[i]) > max) {
+                    ans = nums[i];
+                    max = hm.get(nums[i]);
+                } else if (hm.get(nums[i]) == max && nums[i] < ans) {
                     ans = nums[i];
                     max = hm.get(nums[i]);
                 }
