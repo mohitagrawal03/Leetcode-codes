@@ -1,5 +1,6 @@
 class Solution {
-//     public int mostFrequent(int[] nums, int key) {
+     public int mostFrequent(int[] nums, int key) {
+         // Right and good, By using HashMap
 //         HashMap<Integer, Integer> hm = new HashMap<>();
         
 //         int maxValue = 0, maxKey = 0;
@@ -13,31 +14,31 @@ class Solution {
 //             }
 //         }
         
-//         int maxKey = 0;
-//         int maxValue = 0;
+// //         int maxKey = 0;
+// //         int maxValue = 0;
         
-//         for (Map.Entry<Integer, Integer> entry : hm.entrySet()) {
-//             if (entry.getValue() > maxValue) {
-//                 maxValue = entry.getValue();
-//                 maxKey = entry.getKey();
-//             }
-//         }
+// //         for (Map.Entry<Integer, Integer> entry : hm.entrySet()) {
+// //             if (entry.getValue() > maxValue) {
+// //                 maxValue = entry.getValue();
+// //                 maxKey = entry.getKey();
+// //             }
+// //         }
         
-        //return maxKey;
+//         return maxKey;
+         
+         // By using Array, more efficient
+         int[] count = new int[1001];
     
-    public int mostFrequent(int[] nums, int key) {
-        Map<Integer, Integer> freq = new HashMap<>();
-        int mostFreq = -1;
-        for (int i = 0, n = nums.length, max = 0; i + 1 < n; ++i) {
+         int max = 0, ans = 0;
+         for (int i = 0; i <= nums.length-2; i++) {
             if (nums[i] == key) {
-                int candidate = nums[i + 1];
-                freq.put(candidate, 1 + freq.getOrDefault(candidate, 0));
-                if (freq.get(candidate) > max) {
-                    max = freq.get(candidate);
-                    mostFreq = candidate;
+                count[nums[i+1]]++;
+                if(count[nums[i+1]] > max) {
+                    max = count[nums[i+1]];
+                    ans = nums[i+1];
                 }
             }
-        }
-        return mostFreq;
+         }
+         return ans;
     }
 }
