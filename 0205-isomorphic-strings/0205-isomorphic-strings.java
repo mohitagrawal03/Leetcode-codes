@@ -1,25 +1,50 @@
+// Works but very poor T.C.
+
+// class Solution {
+//     public boolean isIsomorphic(String s, String t) {
+//         HashMap<Character, Character> hmST = new HashMap<>();
+//         HashMap<Character, Character> hmTS = new HashMap<>();
+//         char sc, tc;
+//         for (int i = 0; i < s.length(); i++) {
+//             sc = s.charAt(i); 
+//             tc = t.charAt(i);
+//             if (hmST.containsKey(sc)) {
+//                 if (hmST.get(sc) != tc) {
+//                     return false;
+//                 }
+//             } if (hmTS.containsKey(tc)) {
+//                 if (hmTS.get(tc) != sc) {
+//                     return false;
+//                 }
+//             } else {
+//                 hmST.put(sc, tc);
+//                 hmTS.put(tc, sc);
+//             }
+//         }
+        
+//         return true;
+//     }
+// }
+
+// Efficient Approach
+
 class Solution {
     public boolean isIsomorphic(String s, String t) {
-        HashMap<Character, Character> hmST = new HashMap<>();
-        HashMap<Character, Character> hmTS = new HashMap<>();
-        char sc, tc;
+        HashMap<Character, Character> hm = new HashMap<>();
+        
         for (int i = 0; i < s.length(); i++) {
-            sc = s.charAt(i); 
-            tc = t.charAt(i);
-            if (hmST.containsKey(sc)) {
-                if (hmST.get(sc) != tc) {
+            char sc = s.charAt(i), tc = t.charAt(i);
+            
+            if (!hm.containsKey(sc)) {
+                if (!hm.containsValue(tc)) {
+                    hm.put(sc, tc);
+                } else {
                     return false;
                 }
-            } if (hmTS.containsKey(tc)) {
-                if (hmTS.get(tc) != sc) {
-                    return false;
-                }
-            } else {
-                hmST.put(sc, tc);
-                hmTS.put(tc, sc);
+            } else if (hm.get(sc) != tc) {
+                return false;
             }
         }
-        
         return true;
     }
 }
