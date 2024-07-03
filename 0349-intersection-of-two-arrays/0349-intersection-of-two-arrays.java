@@ -27,6 +27,7 @@
 //     }
 // }
 
+// T.C. = O(n)
 class Solution {
     public int[] intersection(int[] nums1, int[] nums2) {
         HashSet<Integer> set = new HashSet<>();
