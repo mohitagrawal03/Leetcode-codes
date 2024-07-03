@@ -63,9 +63,9 @@ class Solution {
         }
         
         int[] ans = new int[list.size()];
-        int i = 0;
-        for(int num : list) {
-            ans[i++] = num;
+        
+        for(int i = 0; i < ans.length; i++) {
+            ans[i] = list.get(i);
         }
         
         return ans;
