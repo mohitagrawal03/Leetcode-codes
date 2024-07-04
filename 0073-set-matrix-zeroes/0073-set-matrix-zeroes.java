@@ -20,11 +20,23 @@ class Solution {
             }
         }
         
-        for (int r = 0; r < m; r++) {
+        // for (int r = 0; r < m; r++) {
+        //     for (int c = 0; c < n; c++) {
+        //         if(row.contains(r) || col.contains(c)) {
+        //             matrix[r][c] = 0;
+        //         }
+        //     }
+        // }
+        
+        for (int r : row) {
             for (int c = 0; c < n; c++) {
-                if(row.contains(r) || col.contains(c)) {
-                    matrix[r][c] = 0;
-                }
+                matrix[r][c] = 0;
+            }
+        }
+        
+        for (int r = 0; r < m; r++) {
+            for (int c : col) {
+                matrix[r][c] = 0;
             }
         }
     }
