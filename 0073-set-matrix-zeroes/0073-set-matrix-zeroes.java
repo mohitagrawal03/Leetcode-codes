@@ -34,8 +34,8 @@ class Solution {
             }
         }
         
-        for (int r = 0; r < m; r++) {
-            for (int c : col) {
+        for (int c : col) {
+            for (int r = 0; r < m; r++) {
                 matrix[r][c] = 0;
             }
         }
