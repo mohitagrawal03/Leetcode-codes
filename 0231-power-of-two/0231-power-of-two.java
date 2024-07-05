@@ -4,7 +4,7 @@ class Solution {
         if (n == 1 || n == 2) return true;
         
         if (n%2 == 0) {
-            return true && isPowerOfTwo(n/2);
+            return isPowerOfTwo(n/2);
         } else{
             return false;
         }
