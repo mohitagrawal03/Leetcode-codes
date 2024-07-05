@@ -18,8 +18,7 @@ class Solution {
         if (n == 1) return true;
         
         String binary = Integer.toBinaryString(n);
-        binary = binary.substring(1, binary.length());
-        if (binary.contains("1")) return false;
+        if (binary.substring(1, binary.length()).contains("1")) return false;
         return true;
     }
 }
