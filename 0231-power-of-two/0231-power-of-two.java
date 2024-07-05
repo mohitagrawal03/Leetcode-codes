@@ -12,13 +12,20 @@
 //     }
 // }
 
+// class Solution {
+//     public boolean isPowerOfTwo(int n) {
+//         if (n < 1) return false;
+//         if (n == 1) return true;
+        
+//         String binary = Integer.toBinaryString(n);
+//         binary = binary.substring(1, binary.length());
+//         if (binary.contains("1")) return false;
+//         return true;
+//     }
+// }
+
 class Solution {
     public boolean isPowerOfTwo(int n) {
-        if (n < 1) return false;
-        if (n == 1) return true;
-        
-        String binary = Integer.toBinaryString(n);
-        if (binary.substring(1, binary.length()).contains("1")) return false;
-        return true;
+        return n > 0 && (n & n-1) == 0;
     }
 }
