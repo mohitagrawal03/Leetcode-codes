@@ -5,13 +5,13 @@ class Solution {
         
         while (l <= h) {
             m = (l+h)/2;
-            if (nums[m] == target) {
-                return true;
-            } else if (nums[m] == nums[l]) {
+            if (nums[m] == target) return true;
+            if (nums[m] == nums[l] && nums[m] == nums[h]) {
                 l++;
-            } else if (nums[m] == nums[h]) {
                 h--;
-            } else if(nums[l] < nums[m]) {
+                continue;
+            }
+            if(nums[l] <= nums[m]) {
                 if (target >= nums[l] && target < nums[m]) {
                     h = m-1;
                 } else {
